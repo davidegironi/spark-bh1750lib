@@ -13,8 +13,7 @@
 #ifndef __BH1750LIB_H
 #define __BH1750LIB_H
 
-
-//I2c address of the device
+//I2C address of the device
 #define BH1750LIB_I2CADDR 0x23
 
 //Start measurement at 1lx resolution. Measurement time is approx 120ms.
