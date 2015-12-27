@@ -36,7 +36,8 @@
 
 class BH1750Lib {
     public:
-        BH1750Lib(uint8_t mode);
+        BH1750Lib();
+	void begin(uint8_t mode);
         uint16_t lightLevel();
     private:
         void configure(uint8_t mode);
