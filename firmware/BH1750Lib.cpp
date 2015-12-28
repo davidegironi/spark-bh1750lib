@@ -12,7 +12,18 @@
 
 #include "BH1750Lib.h"
 
+/**
+ * Create instance without initialisation, need to call begin later
+ */
 BH1750Lib::BH1750Lib() {
+}
+
+/**
+ * Setup mode and start BH1750
+ */
+BH1750Lib::BH1750Lib(uint8_t mode) {
+  Wire.begin();
+  configure(mode);
 }
 
 /**
