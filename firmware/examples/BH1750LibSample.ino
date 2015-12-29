@@ -16,20 +16,33 @@
 #define UARTDEBUG 1
 
 //initialize devide
-BH1750Lib bh1750(BH1750LIB_MODE_CONTINUOUSHIGHRES);
+BH1750Lib bh1750();
 
 void setup() {
-    #if UARTDEBUG == 1
+
+    bh1750.begin(BH1750LIB_MODE_CONTINUOUSHIGHRES);
+  
+#if UARTDEBUG == 1
     Serial.begin(9600);
     Serial.println("Starting...");
-    #endif
+#endif
 }
 
 void loop() {
-    //read 
+
+    uint16_t luxvalue = bh1750.lightLevel();
+
+    char szEventInfo[64];
+    sprintf(szEventInfo, "Light = %d lux", luxvalue);
+
+    Spark.publish("bh1750info", szEventInfo);
+    
+#if UARTDEBUG == 1
+    //read
     Serial.print("Light: ");
-    Serial.print(bh1750.lightLevel());
+    Serial.print(luxvalue);
     Serial.println("lux");
+#endif
     
     //wait for the next reading
     delay(2000);
