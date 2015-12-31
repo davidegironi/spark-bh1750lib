@@ -2,6 +2,6 @@
   "name": "BH1750Lib",
   "author": "Davide Gironi <davide.gironi@gmail.com>",
   "license": "GPL v3 (http://www.gnu.org/licenses/gpl.html)",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Spark.io for the BH1750FVI IC."
 }
