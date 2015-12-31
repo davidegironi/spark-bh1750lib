@@ -15,11 +15,10 @@
 //debug to serial port
 #define UARTDEBUG 1
 
-//initialize devide
+//initialize device
 BH1750Lib bh1750();
 
 void setup() {
-
     bh1750.begin(BH1750LIB_MODE_CONTINUOUSHIGHRES);
   
 #if UARTDEBUG == 1
@@ -29,7 +28,6 @@ void setup() {
 }
 
 void loop() {
-
     uint16_t luxvalue = bh1750.lightLevel();
 
     char szEventInfo[64];

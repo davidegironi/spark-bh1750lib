@@ -36,16 +36,10 @@
 
 class BH1750Lib {
     public:
-        // Instantiate without initialisation, call begin to initialise
         BH1750Lib();
-	
-	// Instantiate and initialise
-	BH1750Lib(uint8_t mode);
-	
-	void begin(uint8_t mode);
-	
+        BH1750Lib(uint8_t mode);
+        void begin(uint8_t mode);
         uint16_t lightLevel();
-	
     private:
         void configure(uint8_t mode);
 };
